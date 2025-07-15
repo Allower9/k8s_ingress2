@@ -163,8 +163,9 @@ allower@MacBookAir k8s_for_yandex % curl -v https://allower.online/
 < date: Tue, 15 Jul 2025 01:41:57 GMT
 < content-type: application/octet-stream,text/plain
 < content-length: 22
+
 < 
 Add app# to URL path 
 * Connection #0 to host allower.online left intact
-allower@MacBookAir k8s_for_yandex %  
-я могу что-то тут спалить, если в гит закину?
+<img width="1754" height="764" alt="image" src="https://github.com/user-attachments/assets/93459b5a-34f5-419f-a358-4d8b9a07ac81" />
+
