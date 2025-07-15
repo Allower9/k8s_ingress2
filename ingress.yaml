@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: alb-demo-tls
+  namespace: test-app
+  annotations:
+    ingress.alb.yc.io/subnets: <id-сети>
+    ingress.alb.yc.io/external-ipv4-address: auto
+    ingress.alb.yc.io/group-name: ingress-tls
+spec:
+  tls:
+    - hosts:
+        - <domain>
+      secretName: yc-certmgr-cert-id-<idсертификата>
+  rules:
+    - host: <domain>
+      http:
+        paths:
+          - path: /app1
+            pathType: Prefix
+            backend:
+              service:
+                name: alb-demo-1
+                port:
+                  number: 80
+          - path: /app2
+            pathType: Prefix
+            backend:
+              service:
+                name: alb-demo-2
+                port:
+                  number: 80
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: alb-demo-2
+                port:
+                  number: 80
